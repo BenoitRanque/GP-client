@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import example from './modules/example'
+import example from './module-example'
 
 Vue.use(Vuex)
 
@@ -10,17 +10,5 @@ const store = new Vuex.Store({
     example
   }
 })
-
-if (process.env.DEV && module.hot) {
-  module.hot.accept(['./modules/example'], () => {
-    const newModule = require('./modules/example').default
-
-    store.hotUpdate({
-      modules: {
-        showcase: newModule
-      }
-    })
-  })
-}
 
 export default store
